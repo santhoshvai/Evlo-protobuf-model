@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option java_package = "info.santhosh.evlo.model";
+option java_outer_classname = "CommodityProtos";
+/*
+The lite runtime is much smaller than the full library
+ (around an order of magnitude smaller) but omits certain features like descriptors and reflection.
+ This is particularly useful for apps running on constrained platforms like mobile phones.
+*/
+option optimize_for = LITE_RUNTIME;
+
+message Commodity {
+    int32 rowOrder = 1;
+    string state = 2;
+    string district = 3;
+    string market = 4;
+    string commodity = 5;
+    string variety = 6;
+    int64 arrivalTimeStamp = 7; // unix timestamp of the date of arrival
+    int32 minPrice = 8;
+    int32 maxPrice = 9;
+    int32 modalPrice = 10;
+}
+
+message Commodities {
+    repeated Commodity commodity = 1;
+}
