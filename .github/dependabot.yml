@@ -1,0 +1,18 @@
+version: 2
+updates:
+- package-ecosystem: gradle
+  directory: "/"
+  schedule:
+    interval: monthly
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: com.google.protobuf:protoc
+    versions:
+    - 3.14.0
+  - dependency-name: com.google.protobuf:protobuf-gradle-plugin
+    versions:
+    - 0.8.14
+  - dependency-name: junit:junit
+    versions:
+    - 4.13.1
